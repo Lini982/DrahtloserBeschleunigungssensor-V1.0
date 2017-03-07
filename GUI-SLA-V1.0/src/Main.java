@@ -19,7 +19,7 @@ public class Main {
 	
 	public Main() {
 		
-		window = new JFrame("Telemetry Viewer");
+		window = new JFrame("SLA Multifunktionssensormodulsoftware");
 		//chartsRegion = new ChartsRegion();
 		//controlsRegion = new ControlsRegion();
 		
