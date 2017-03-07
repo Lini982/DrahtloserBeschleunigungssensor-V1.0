@@ -48,7 +48,9 @@ public class ChartsRegion extends JPanel {
 		endY    = -1;
 		
 		setLayout(null); // absolute layout
-		setMinimumSize(new Dimension(200, 200));
+		
+		//übernommen in Main (bei window) -Linus
+		//setMinimumSize(new Dimension(0, 200));
 		
 		// update the column and row counts when they change
 		Controller.addGridChangedListener(new GridChangedListener() {

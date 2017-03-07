@@ -4,7 +4,8 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.SwingUtilities;
 
-import org.jfree.ChartFactory;
+//unten direkt aus Library aufrufen. generiert komsicherweise Fehler
+//import org.jfree.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.LogAxis;
 import org.jfree.chart.axis.NumberAxis;
@@ -143,7 +144,7 @@ public class FrequencyDomainChart extends PositionedChart {
 		}
 		
 		XYSeriesCollection seriesCollection = new XYSeriesCollection(powerLevels);
-		JFreeChart frequencyDomainChart = ChartFactory.createXYLineChart(chartTitle, xAxisTitle, yAxisTitle, seriesCollection);
+		JFreeChart frequencyDomainChart = org.jfree.chart.ChartFactory.createXYLineChart(chartTitle, xAxisTitle, yAxisTitle, seriesCollection);
 //		frequencyDomainChart.removeLegend();
 		frequencyDomainChart.getXYPlot().getRenderer().setSeriesPaint(0, datasets[0].color);
 		LogAxis verticalAxis = new LogAxis("Power (W)");
