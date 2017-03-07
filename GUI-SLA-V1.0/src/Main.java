@@ -7,18 +7,18 @@ import javax.swing.UIManager;
 public class Main {
 	
 	JFrame window;
-	ChartsRegion chartsRegion;
-	ControlsRegion controlsRegion;
+//	ChartsRegion chartsRegion;
+//	ControlsRegion controlsRegion;
 	
 	public Main() {
 		
 		window = new JFrame("Telemetry Viewer");
-		chartsRegion = new ChartsRegion();
-		controlsRegion = new ControlsRegion();
+	//	chartsRegion = new ChartsRegion();
+	//	controlsRegion = new ControlsRegion();
 		
 		window.setLayout(new BorderLayout());
-		window.add(chartsRegion, BorderLayout.CENTER);
-		window.add(controlsRegion, BorderLayout.SOUTH);
+	//	window.add(chartsRegion, BorderLayout.CENTER);
+	//	window.add(controlsRegion, BorderLayout.SOUTH);
 		
 		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		window.setSize( (int) (GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width * 0.6), (int) (GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height * 0.6) );
