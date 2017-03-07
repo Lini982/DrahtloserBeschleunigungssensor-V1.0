@@ -33,7 +33,7 @@ public class Model {
 	static ChartDescriptor[] chartDescriptors = new ChartDescriptor[] {
 		TimeDomainChart.getDescriptor(),
 		TimeDomainChartCached.getDescriptor(),
-		FrequencyDomainChart.getDescriptor(),
+		//FrequencyDomainChart.getDescriptor(),
 		HistogramChart.getDescriptor(),
 		StatisticsChart.getDescriptor()
 	};
