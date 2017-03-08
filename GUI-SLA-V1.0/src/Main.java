@@ -17,16 +17,19 @@ public class Main {
 	ChartsRegion chartsRegion;
 	ControlsRegion controlsRegion;
 	
+	static MenuBar menubar = new MenuBar();
+	
 	public Main() {
 		
 		window = new JFrame("SLA Multifunktionssensormodulsoftware");
 		//chartsRegion = new ChartsRegion();
 		//controlsRegion = new ControlsRegion();
 		
+		
 
 		
 		window.setLayout(new BorderLayout());
-		window.add(new MenuBar(), BorderLayout.NORTH);
+		window.add(menubar, BorderLayout.NORTH);
 		window.add(new ChartsRegion(), BorderLayout.CENTER);
 		window.add(new ControlsRegion(), BorderLayout.SOUTH);
 		
@@ -39,6 +42,7 @@ public class Main {
 		window.setVisible(true);
 
 	}
+
 
 	public static void main(String[] args) {
 		
