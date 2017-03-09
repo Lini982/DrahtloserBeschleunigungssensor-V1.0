@@ -23,7 +23,7 @@ public class MenuBar extends JMenuBar {
 		JMenuItem menuitem1_1 = new JMenuItem("Exportieren als CSV-Datei (für Excel)");
 		menuitem1_1.addActionListener(new ActionListener() { 	
 		    public void actionPerformed(ActionEvent e) { 
-		        JOptionPane.showConfirmDialog(null, "Export csv ausführen" , "Titel", 0, 0); // letzte Zahl: 0(Error), 1(Achtung), 2(Information), 3(Frage)
+		        //Exportcsv aufrufen
 		    } 
 		});
 		
