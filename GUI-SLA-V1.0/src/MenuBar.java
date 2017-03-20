@@ -16,8 +16,8 @@ public class MenuBar extends JMenuBar {
 	private int beschlEinheit = 2; //2: m/s²; 3: Vielfache von g
 	
 	public MenuBar () {
-		
 		super();
+		
 		//Erstes Menü
 		JMenu menu1 = new JMenu("Daten"); 
 		JMenuItem menuitem1_1 = new JMenuItem("Exportieren als CSV-Datei (für Excel)");
@@ -31,45 +31,44 @@ public class MenuBar extends JMenuBar {
 		JMenu menu2 = new JMenu("Einheiten"); 
 		//2: m/s²
 		//3; Vielfache von g
-		if(beschlEinheit==2) {//wenn aktuell m/s²
+	
+			
+		
 			menuitem2_1 = new JMenuItem("Beschleunigungswerte (m/s²)");
 			menuitem2_1.addActionListener(new ActionListener() { 	
-				public void actionPerformed(ActionEvent e) { 		    
-					if(JOptionPane.showConfirmDialog(null, "Wollen sie die Werte statt in m/s² in Vielfachen von G anzeigen lassen?" , "Beschleunigungseinheit", 0, 3)==0){
-						// letzte Zahl: 0(Error), 1(Achtung), 2(Information), 3(Frage)
-						//Datenverarbeitung (Ja(ändern) gibt 0 zurück)
-						
-						beschlEinheit = 3;
-						System.out.println("ms zu G");
-						
-					} else {
-						//Nein, nicht ändern (also m/s² lassen)
-						beschlEinheit = 2;
-						System.out.println("ms zu ms");
-					}
+				public void actionPerformed(ActionEvent e) { 	
 					
-		    	}
-			}); 
-		} else { //sonst
-			menuitem2_1 = new JMenuItem("Beschleunigungswerte (G)");
-			menuitem2_1.addActionListener(new ActionListener() { 	
-			    public void actionPerformed(ActionEvent e) { 		    
-			        if(JOptionPane.showConfirmDialog(null, "Wollen sie die Werte statt in m/s² in Vielfachen von G anzeigen lassen?" , "Beschleunigungseinheit", 0, 3)==0){
-						// letzte Zahl: 0(Error), 1(Achtung), 2(Information), 3(Frage)
-						//Datenverarbeitung (Ja(ändern) gibt 0 zurück)
+					if(beschlEinheit==2) {//wenn aktuell m/s²
+						if(JOptionPane.showConfirmDialog(null, "Wollen sie die Werte statt in m/s² in Vielfachen von G anzeigen lassen?" , "Beschleunigungseinheit", 0, 3)==0){
+							// letzte Zahl: 0(Error), 1(Achtung), 2(Information), 3(Frage)
+							//Datenverarbeitung (Ja(ändern) gibt 0 zurück)
 						
-			        	beschlEinheit = 2;
-			        	System.out.println("G zu ms");
+							beschlEinheit = 3;
+							System.out.println("ms zu G"+ beschlEinheit);
+							menuitem2_1.setText("Beschleunigungswerte (G)");
 						
-					} else {
-						//Nein, nicht ändern (also g lassen)
-						beschlEinheit = 3;
-						System.out.println("G zu G");
-					}
-			    } 
-		});
-		}
-		
+						} else {
+							//Nein, nicht ändern (also m/s² lassen)
+							beschlEinheit = 2;
+							System.out.println("ms zu ms");
+						}				
+					} else { //sonst		    
+			        
+						if(JOptionPane.showConfirmDialog(null, "Wollen sie die Werte statt in m/s² in Vielfachen von G anzeigen lassen?" , "Beschleunigungseinheit", 0, 3)==0){
+										
+							beschlEinheit = 2;
+							System.out.println("G zu ms"+ beschlEinheit);		
+							menuitem2_1.setText("Beschleunigungswerte (m/s²)");
+						
+						} else {
+							//Nein, nicht ändern (also g lassen)
+							beschlEinheit = 3;
+							System.out.println("G zu G");					
+						}
+					
+					}}
+				});
+			
 		//Drittes Menü
 		JMenu menu3 = new JMenu("Kalibrierung"); 
 		JMenuItem menuitem3_1 = new JMenuItem("Höhe");

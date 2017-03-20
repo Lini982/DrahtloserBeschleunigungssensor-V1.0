@@ -13,7 +13,7 @@ import javax.swing.UIManager;
 
 public class Main {
 	
-	JFrame window;
+	static JFrame window;
 	ChartsRegion chartsRegion;
 	ControlsRegion controlsRegion;
 	
@@ -50,6 +50,10 @@ public class Main {
 		
 		new Main();
 		
+	}
+	
+	public static void repaintX(){
+		window.repaint();		
 	}
 
 }
