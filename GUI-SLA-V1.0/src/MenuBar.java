@@ -30,7 +30,7 @@ public class MenuBar extends JMenuBar {
 		//Zweites Menü
 		JMenu menu2 = new JMenu("Einheiten"); 
 		//2: m/s²
-		//3; Vielfache von g
+		//3; Vielfache von G
 	
 			
 		
@@ -73,7 +73,7 @@ public class MenuBar extends JMenuBar {
 		JMenu menu3 = new JMenu("Kalibrierung"); 
 		JMenuItem menuitem3_1 = new JMenuItem("Höhe");
 		menuitem3_1.addActionListener(new ActionListener() { 	
-		    public void actionPerformed(ActionEvent e) {
+		    public void actionPerformed(ActionEvent e) { 
 		    	JOptionPane.showInputDialog(null, "Auf welcher Höhe befindet sich der Empfänger gerade?", "Höhenkalibrierung", 3);
 		    }
 		});
