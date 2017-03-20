@@ -9,12 +9,12 @@ import java.util.TreeMap;
 public class Model {
 	
 	// the grid is the area in the ChartsRegion where users can position and size the charts
-	final static int gridColumnsDefault = 8;
+	final static int gridColumnsDefault = 1;
 	final static int gridColumnsMinimum = 1;
 	final static int gridColumnsMaximum = 12;
 	static int gridColumns = gridColumnsDefault;
 	
-	final static int gridRowsDefault = 8;
+	final static int gridRowsDefault = 2;
 	final static int gridRowsMinimum = 1;
 	final static int gridRowsMaximum = 12;
 	static int gridRows = gridRowsDefault;
@@ -23,7 +23,7 @@ public class Model {
 	static int sampleRate = 1000;
 	static String packetType = "";
 	static String portName = "";
-	static int baudRate = 0;
+	static int baudRate = 38400;
 	
 	final static Color lineColorDefault = Color.RED;
 	

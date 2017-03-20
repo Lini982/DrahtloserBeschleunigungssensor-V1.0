@@ -84,19 +84,19 @@ public class MenuBar extends JMenuBar {
 		JMenuItem menuitem4_1 = new JMenuItem("1");
 		menuitem4_1.addActionListener(new ActionListener() { 	
 		    public void actionPerformed(ActionEvent e) {
-		    	
+		    	ChartsRegion.setLayout(1);
 		    }
 		});
 		JMenuItem menuitem4_2 = new JMenuItem("2");
 		menuitem4_2.addActionListener(new ActionListener() { 	
 		    public void actionPerformed(ActionEvent e) {
-		    	
+		    	ChartsRegion.setLayout(2);
 		    }
 		});
 		JMenuItem menuitem4_3 = new JMenuItem("3");
 		menuitem4_3.addActionListener(new ActionListener() { 	
 		    public void actionPerformed(ActionEvent e) {
-		    	
+		    	ChartsRegion.setLayout(3);
 		    }
 		});
 		//Menüitems an menu1 hinzufügen

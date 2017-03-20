@@ -49,9 +49,6 @@ public class ChartsRegion extends JPanel {
 		
 		setLayout(null); // absolute layout
 		
-		//übernommen in Main (bei window) -Linus
-		//setMinimumSize(new Dimension(0, 200));
-		
 		// update the column and row counts when they change
 		Controller.addGridChangedListener(new GridChangedListener() {
 			@Override public void gridChanged(int columns, int rows) {
@@ -217,6 +214,16 @@ public class ChartsRegion extends JPanel {
 		int boxWidth  = (Math.abs(endX - startX) + 1) * columnWidth;
 		int boxHeight = (Math.abs(endY - startY) + 1) * rowHeight;
 		g2.fillRect(x, y, boxWidth, boxHeight);
+		
+		
+		
+		//Layout 1 laden (standard)
+		//JFrame parentWindow = (JFrame) SwingUtilities.windowForComponent(ChartsRegion.this);
+		//new NewChartWindow(parentWindow, 0, 0, 1, 1);
+		
+	}
+	
+	public static void setLayout(int index){
 		
 	}
 	
