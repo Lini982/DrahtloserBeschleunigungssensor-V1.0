@@ -37,7 +37,6 @@ public class MenuBar extends JMenuBar {
 			menuitem2_1 = new JMenuItem("Beschleunigungswerte (m/s²)");
 			menuitem2_1.addActionListener(new ActionListener() { 	
 				public void actionPerformed(ActionEvent e) { 	
-					
 					if(beschlEinheit==2) {//wenn aktuell m/s²
 						if(JOptionPane.showConfirmDialog(null, "Wollen sie die Werte statt in m/s² in Vielfachen von G anzeigen lassen?" , "Beschleunigungseinheit", 0, 3)==0){
 							// letzte Zahl: 0(Error), 1(Achtung), 2(Information), 3(Frage)
@@ -66,8 +65,9 @@ public class MenuBar extends JMenuBar {
 							System.out.println("G zu G");					
 						}
 					
-					}}
-				});
+					}
+				}
+			});
 			
 		//Drittes Menü
 		JMenu menu3 = new JMenu("Kalibrierung"); 
