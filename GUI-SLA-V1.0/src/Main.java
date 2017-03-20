@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,19 +18,32 @@ public class Main {
 	ChartsRegion chartsRegion;
 	ControlsRegion controlsRegion;
 	
-	static MenuBar menubar = new MenuBar();
+	
+	private static void setUIFont(javax.swing.plaf.FontUIResource f)
+	{
+	    java.util.Enumeration<Object> keys = UIManager.getDefaults().keys();
+	    while (keys.hasMoreElements())
+	    {
+	        Object key = keys.nextElement();
+	        Object value = UIManager.get(key);
+	        if (value instanceof javax.swing.plaf.FontUIResource)
+	        {
+	            UIManager.put(key, f);
+	        }
+	    }
+	}
 	
 	public Main() {
 		
 		window = new JFrame("SLA Multifunktionssensormodulsoftware");
 		//chartsRegion = new ChartsRegion();
 		//controlsRegion = new ControlsRegion();
-		
-		
-
-		
+	
 		window.setLayout(new BorderLayout());
-		window.add(menubar, BorderLayout.NORTH);
+
+		setUIFont (new javax.swing.plaf.FontUIResource(new Font("Arial", Font.PLAIN, 15)));
+		window.add(new MenuBar(), BorderLayout.NORTH);
+		
 		window.add(new ChartsRegion(), BorderLayout.CENTER);
 		window.add(new ControlsRegion(), BorderLayout.SOUTH);
 		
@@ -40,6 +54,7 @@ public class Main {
 		window.setMinimumSize(new Dimension(600,400));
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setVisible(true);
+		
 
 	}
 
@@ -50,10 +65,6 @@ public class Main {
 		
 		new Main();
 		
-	}
-	
-	public static void repaintX(){
-		window.repaint();		
 	}
 
 }

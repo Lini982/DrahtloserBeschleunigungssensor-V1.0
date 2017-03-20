@@ -1,7 +1,7 @@
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -17,7 +17,7 @@ public class MenuBar extends JMenuBar {
 	
 	public MenuBar () {
 		super();
-		
+		super.setPreferredSize(new Dimension(100,30));
 		//Erstes Menü
 		JMenu menu1 = new JMenu("Daten"); 
 		JMenuItem menuitem1_1 = new JMenuItem("Exportieren als CSV-Datei (für Excel)");
