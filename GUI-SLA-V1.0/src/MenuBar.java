@@ -53,7 +53,7 @@ public class MenuBar extends JMenuBar {
 						}				
 					} else { //sonst		    
 			        
-						if(JOptionPane.showConfirmDialog(null, "Wollen sie die Werte statt in m/s² in Vielfachen von G anzeigen lassen?" , "Beschleunigungseinheit", 0, 3)==0){
+						if(JOptionPane.showConfirmDialog(null, "Wollen sie die Werte statt in Vielfachen von G in m/s² anzeigen lassen?" , "Beschleunigungseinheit", 0, 3)==0){
 										
 							beschlEinheit = 2;
 							System.out.println("G zu ms"+ beschlEinheit);		
