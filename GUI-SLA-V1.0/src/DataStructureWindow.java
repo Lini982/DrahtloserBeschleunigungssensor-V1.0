@@ -345,6 +345,53 @@ public class DataStructureWindow extends JDialog {
 		
 		nameTextfield.requestFocus();
 		
+		//Automatisches Einfuegen der Datasets
+		
+		Controller.removeAllDatasets();
+		
+		int location = 0;
+		BinaryProcessor processor = Controller.getBinaryProcessors()[0];
+		String name = "";
+		Color color = null;
+		String unit = "";
+		double conversionFactorA = 1;
+		double conversionFactorB = 1;
+		
+		location = 0;
+		name = "X-Wert";
+		color = Color.RED;
+		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		
+		location = 1;
+		name = "Y-Wert";
+		color = Color.BLUE;
+		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		
+		location = 2;
+		name = "Z-Wert";
+		color = Color.GREEN;
+		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		
+		location = 3;
+		name = "Druck";
+		color = Color.BLACK;
+		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		
+		location = 4;
+		name = "Temperatur";
+		color = Color.YELLOW;
+		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		
+		locationTextfield.setEnabled(false);
+		datatypeCombobox.setEnabled(false);
+		nameTextfield.setEnabled(false);
+		colorButton.setEnabled(false);
+		unitTextfield.setEnabled(false);
+		conversionFactorATextfield.setEnabled(false);
+		conversionFactorBTextfield.setEnabled(false);
+		addButton.setEnabled(false);
+		resetButton.setEnabled(false);
+		
 		if(testMode) {
 			locationTextfield.setEnabled(false);
 			datatypeCombobox.setEnabled(false);
@@ -356,6 +403,9 @@ public class DataStructureWindow extends JDialog {
 			addButton.setEnabled(false);
 			resetButton.setEnabled(false);
 		}
+		
+		
+			
 		
 		setModal(true);
 		setVisible(true);
