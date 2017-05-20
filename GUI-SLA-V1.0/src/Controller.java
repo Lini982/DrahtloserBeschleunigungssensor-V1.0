@@ -317,11 +317,21 @@ public class Controller {
 						try {
 							
 							String line = scanner.nextLine();
-							String[] tokens = line.split(",");
-							double[] samples = new double[tokens.length];
-							for(int i = 0; i < tokens.length; i++)
-								samples[i] = Double.parseDouble(tokens[i]);
-							Controller.insertSamples(samples);
+							double xline = Double.parseDouble(line);
+						
+							double[] samples1 = new double[5];
+							if(xline == 51337){
+								
+								for (int i = 0; i < samples1.length; i++) {
+									samples1[i] = Double.parseDouble(scanner.nextLine());
+								}
+							}
+							
+//							String[] tokens = line.split(",");
+//							double[] samples = new double[tokens.length];
+//							for(int i = 0; i < tokens.length; i++)
+//								samples[i] = Double.parseDouble(tokens[i]);
+							Controller.insertSamples(samples1);
 							
 						} catch(Exception e) { }
 						
