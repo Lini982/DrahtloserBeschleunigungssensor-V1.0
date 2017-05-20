@@ -325,13 +325,13 @@ public class Controller {
 								for (int i = 0; i < samples1.length; i++) {
 									samples1[i] = Double.parseDouble(scanner.nextLine());
 								}
+								Controller.insertSamples(samples1);
 							}
 							
 //							String[] tokens = line.split(",");
 //							double[] samples = new double[tokens.length];
 //							for(int i = 0; i < tokens.length; i++)
 //								samples[i] = Double.parseDouble(tokens[i]);
-							Controller.insertSamples(samples1);
 							
 						} catch(Exception e) { }
 						
