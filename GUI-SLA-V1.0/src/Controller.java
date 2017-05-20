@@ -319,14 +319,17 @@ public class Controller {
 							String line = scanner.nextLine();
 							double xline = Double.parseDouble(line);
 						
-							double[] samples1 = new double[6];
+							double[] samples1 = new double[7];
 							if(xline == 51337){
 								
-								for (int i = 0; i < samples1.length; i++) {
-									if(i == 3)
-										samples1[3] = Math.sqrt(Math.pow(samples1[0], 2) + Math.pow(samples1[1], 2) + Math.pow(samples1[2], 2));
-									else
-										samples1[i] = Double.parseDouble(scanner.nextLine());
+									samples1[0] = Double.parseDouble(scanner.nextLine()); //x
+									samples1[1] = Double.parseDouble(scanner.nextLine()); //y
+									samples1[2] = Double.parseDouble(scanner.nextLine()); //z
+									samples1[3] = Math.sqrt(Math.pow(samples1[0], 2) + Math.pow(samples1[1], 2) + Math.pow(samples1[2], 2)); //Betrag v. x,y,z
+									samples1[4] = Double.parseDouble(scanner.nextLine()); //Druck
+									samples1[5] = Double.parseDouble(scanner.nextLine()); //Temperatur
+									samples1[6] = Double.parseDouble(scanner.nextLine()); //Höhe
+									
 								}
 
 								Controller.insertSamples(samples1);

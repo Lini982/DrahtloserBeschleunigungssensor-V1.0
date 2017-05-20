@@ -387,6 +387,12 @@ public class DataStructureWindow extends JDialog {
 		color = Color.YELLOW;
 		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
 		
+		location = 6;
+		name = "Höhe";
+		color = Color.DARK_GRAY;
+		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		
+		
 		locationTextfield.setEnabled(false);
 		datatypeCombobox.setEnabled(false);
 		nameTextfield.setEnabled(false);
