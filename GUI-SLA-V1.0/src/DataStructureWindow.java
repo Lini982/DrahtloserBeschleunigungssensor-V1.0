@@ -373,11 +373,16 @@ public class DataStructureWindow extends JDialog {
 		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
 		
 		location = 3;
+		name = "Betrag";
+		color = Color.CYAN;
+		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		
+		location = 4;
 		name = "Druck";
 		color = Color.BLACK;
 		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
 		
-		location = 4;
+		location = 5;
 		name = "Temperatur";
 		color = Color.YELLOW;
 		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
