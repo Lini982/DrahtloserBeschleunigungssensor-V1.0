@@ -317,9 +317,9 @@ public class Controller {
 						try {
 							
 							String line = scanner.nextLine();
-							double xline = Double.parseDouble(line);
+							//double xline = Double.parseDouble(line);
 						
-							double[] samples1 = new double[7];
+							//double[] samples1 = new double[7];
 							/*if(xline == 51337){
 								
 									samples1[0] = Double.parseDouble(scanner.nextLine()); //x
@@ -332,14 +332,19 @@ public class Controller {
 									
 								}
 
-								Controller.insertSamples(samples1);
 							*/
 							
 							String[] tokens = line.split(",");
 							double[] samples = new double[tokens.length];
-							for(int i = 0; i < tokens.length; i++)
+							for(int i = 0; i < tokens.length; i++){
+								if(i == 3){
+									samples[3] = Math.sqrt(Math.pow(samples[0], 2) + Math.pow(samples[1], 2) + Math.pow(samples[2], 2)); //Betrag v. x,y,z	
+									i++;
+								}
 								samples[i] = Double.parseDouble(tokens[i]);
+							}
 							
+							Controller.insertSamples(samples);
 						} catch(Exception e) { }
 						
 					}
