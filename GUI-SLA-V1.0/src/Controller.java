@@ -322,10 +322,13 @@ public class Controller {
 							double[] samples1 = new double[6];
 							if(xline == 51337){
 								
-								for (int i = 0; i < 4; i++) {
-									samples1[i] = Double.parseDouble(scanner.nextLine());
+								for (int i = 0; i < samples1.length; i++) {
+									if(i == 3)
+										samples1[3] = Math.sqrt(Math.pow(samples1[0], 2) + Math.pow(samples1[1], 2) + Math.pow(samples1[2], 2));
+									else
+										samples1[i] = Double.parseDouble(scanner.nextLine());
 								}
-								samples1[5] = Math.sqrt(Math.pow(samples1[0], 2) + Math.pow(samples1[1], 2) + Math.pow(samples1[2], 2));
+
 								Controller.insertSamples(samples1);
 							}
 							
