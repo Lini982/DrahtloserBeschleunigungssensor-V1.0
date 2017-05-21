@@ -320,7 +320,7 @@ public class Controller {
 							double xline = Double.parseDouble(line);
 						
 							double[] samples1 = new double[7];
-							if(xline == 51337){
+							/*if(xline == 51337){
 								
 									samples1[0] = Double.parseDouble(scanner.nextLine()); //x
 									samples1[1] = Double.parseDouble(scanner.nextLine()); //y
@@ -333,12 +333,12 @@ public class Controller {
 								}
 
 								Controller.insertSamples(samples1);
-							}
+							*/
 							
-//							String[] tokens = line.split(",");
-//							double[] samples = new double[tokens.length];
-//							for(int i = 0; i < tokens.length; i++)
-//								samples[i] = Double.parseDouble(tokens[i]);
+							String[] tokens = line.split(",");
+							double[] samples = new double[tokens.length];
+							for(int i = 0; i < tokens.length; i++)
+								samples[i] = Double.parseDouble(tokens[i]);
 							
 						} catch(Exception e) { }
 						
