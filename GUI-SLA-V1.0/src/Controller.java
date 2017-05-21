@@ -338,13 +338,11 @@ public class Controller {
 							double[] samples = new double[7];
 							for(int i = 0; i < tokens.length; i++){
 								if(i == 3){
-									samples[3] = Math.sqrt(Math.pow(samples[0], 2) + Math.pow(samples[1], 2) + Math.pow(samples[2], 2)); //Betrag v. x,y,z	
-								
+									samples[3] = Math.sqrt(Math.pow(samples[0], 2) + Math.pow(samples[1], 2) + Math.pow(samples[2], 2)); //Betrag v. x,y,z														
 								}
 								else if(i == 6){
 									double sea_press = 1013.25;
-									samples[6] = ((Math.pow((sea_press / samples[4]), 1/5.257) - 1.0) * (samples[5] + 273.15)) / 0.0065;
-
+									samples[6] = ((Math.pow((sea_press / samples[4]), 1/5.257) - 1.0) * (samples[5] + 273.15)) / 0.0065;								
 								}
 								else{
 								samples[i] = Double.parseDouble(tokens[i]);
