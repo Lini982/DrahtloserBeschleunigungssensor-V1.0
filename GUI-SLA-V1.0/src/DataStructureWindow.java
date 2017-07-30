@@ -1,35 +1,21 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.font.FontRenderContext;
-import javax.swing.Box;
+
 import javax.swing.JButton;
-import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
-import javax.swing.table.AbstractTableModel;
 
 /**
  * The window that the user uses to specify details about the CSV columns or Binary element byte offsets and types.
  */
 @SuppressWarnings("serial")
 public class DataStructureWindow extends JDialog {
-	
+	/*
 	JPanel dataEntryPanel;
 	JPanel tablePanel;
 	
@@ -48,8 +34,8 @@ public class DataStructureWindow extends JDialog {
 	
 	JTable dataStructureTable;
 	JScrollPane scrollableDataStructureTable;
-	
-	/**
+	*/
+		/**
 	 * Creates a new window where the user can define the CSV or Binary data structure.
 	 * 
 	 * @param parentWindow    Which window to center this DataStructureWindow over.
@@ -57,7 +43,7 @@ public class DataStructureWindow extends JDialog {
 	 * @param testMode        If true, the user will only be able to view, not edit, the data structure.
 	 */
 	public DataStructureWindow(JFrame parentWindow, String packetType, boolean testMode) {
-		
+		/*
 		super();
 		
 		setTitle(testMode ? "Data Structure (Not Editable in Test Mode)" : "Data Structure");
@@ -348,7 +334,7 @@ public class DataStructureWindow extends JDialog {
 		//Automatisches Einfuegen der Datasets
 		
 		Controller.removeAllDatasets();
-		
+		*/
 		int location = 0;
 		BinaryProcessor processor = Controller.getBinaryProcessors()[0];
 		String name = "";
@@ -392,7 +378,7 @@ public class DataStructureWindow extends JDialog {
 		color = Color.DARK_GRAY;
 		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
 		
-		
+		/*
 		locationTextfield.setEnabled(false);
 		datatypeCombobox.setEnabled(false);
 		nameTextfield.setEnabled(false);
@@ -402,6 +388,7 @@ public class DataStructureWindow extends JDialog {
 		conversionFactorBTextfield.setEnabled(false);
 		addButton.setEnabled(false);
 		resetButton.setEnabled(false);
+		
 		
 		if(testMode) {
 			locationTextfield.setEnabled(false);
@@ -420,6 +407,12 @@ public class DataStructureWindow extends JDialog {
 		
 		setModal(true);
 		setVisible(true);
+		*/
+		
+		
+		Controller.startReceivingData(); 	//Button "Done"
+		dispose();							//Button "Done"
+
 		
 	}
 
