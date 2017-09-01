@@ -13,7 +13,11 @@ public class MenuBar extends JMenuBar {
 	JMenuItem menuitem1_1, menuitem2_1;
 	
 	//Einstellungen;
-	private int beschlEinheit = 2; //2: m/s²; 3: Vielfache von g
+	private static int beschlEinheit = 2; //2: m/s²; 3: Vielfache von g
+	
+	public static int getbeschlEinheit(){
+		return beschlEinheit;
+	}
 	
 	public MenuBar () {
 		super();
@@ -112,7 +116,7 @@ public class MenuBar extends JMenuBar {
 		super.add(menu4);
 		super.add(menu2);
 		super.add(menu3);
-
+		
 	}	
 	
 }

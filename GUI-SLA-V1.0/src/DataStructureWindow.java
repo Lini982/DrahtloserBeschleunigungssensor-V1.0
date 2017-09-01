@@ -339,44 +339,56 @@ public class DataStructureWindow extends JDialog {
 		BinaryProcessor processor = Controller.getBinaryProcessors()[0];
 		String name = "";
 		Color color = null;
-		String unit = "";
+		String unitms = "m/s²";
+		String unitg = "Vielfache von g"; //Unterscheidung nach auswahl
+		String unit0 = "";
+		String unitmbar = "mBar";
+		String unitdeg = "°C";
+		String unitm = "m";
+		String unita="";
 		double conversionFactorA = 1;
 		double conversionFactorB = 1;
+		
+		if(MenuBar.getbeschlEinheit()==2){
+			unita = unitms;
+		} else {
+			unita = unitg;
+		}
 		
 		location = 0;
 		name = "X-Wert";
 		color = Color.RED;
-		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unita, conversionFactorA, conversionFactorB);
 		
 		location = 1;
 		name = "Y-Wert";
 		color = Color.BLUE;
-		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unita, conversionFactorA, conversionFactorB);
 		
 		location = 2;
 		name = "Z-Wert";
 		color = Color.GREEN;
-		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unita, conversionFactorA, conversionFactorB);
 		
 		location = 3;
 		name = "Betrag";
 		color = Color.CYAN;
-		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unita, conversionFactorA, conversionFactorB);
 		
 		location = 4;
 		name = "Druck";
 		color = Color.BLACK;
-		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unitmbar, conversionFactorA, conversionFactorB);
 		
 		location = 5;
 		name = "Temperatur";
 		color = Color.YELLOW;
-		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unitdeg, conversionFactorA, conversionFactorB);
 		
 		location = 6;
 		name = "Höhe";
 		color = Color.DARK_GRAY;
-		Controller.insertDataset(location, processor, name, color, unit, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unitm, conversionFactorA, conversionFactorB);
 		
 		/*
 		locationTextfield.setEnabled(false);

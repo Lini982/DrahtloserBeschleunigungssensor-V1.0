@@ -9,23 +9,24 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
+
 @SuppressWarnings("serial")
 public class TimeDomainChart extends PositionedChart {
 	
 	Image chartImage;
-	
+	static String diagrammtitel = "Zeit-Diagramm";
 	public static ChartDescriptor getDescriptor() {
 		
 		return new ChartDescriptor() {
 			
-			@Override public String toString()        { return "Time Domain Chart"; }
+			@Override public String toString()        { return "Zeit-Diagramm"; }
 			@Override public int getMinimumDuration() { return 10; }
 			@Override public int getDefaultDuration() { return 1000; }
 			@Override public int getMaximumDuration() { return Integer.MAX_VALUE; }
 			@Override public String[] getInputNames() { return null; }
 			
 			@Override public PositionedChart createChart(int x1, int y1, int x2, int y2, int chartDuration, Dataset[] chartInputs) {
-				return new TimeDomainChart(x1, y1, x2, y2, chartDuration, chartInputs);
+				return new TimeDomainChart(x1, y1, x2, y2, chartDuration, chartInputs, diagrammtitel);
 			}
 			
 		};
@@ -34,11 +35,11 @@ public class TimeDomainChart extends PositionedChart {
 	
 	@Override public String toString() {
 		
-		return "Time Domain Chart";
+		return "Zeit-Diagramm";
 		
 	}
 
-	public TimeDomainChart(int x1, int y1, int x2, int y2, int chartDuration, Dataset[] chartInputs) {
+	public TimeDomainChart(int x1, int y1, int x2, int y2, int chartDuration, Dataset[] chartInputs, String diagrammtitel) {
 		
 		super(x1, y1, x2, y2, chartDuration, chartInputs);
 		
@@ -56,8 +57,8 @@ public class TimeDomainChart extends PositionedChart {
 					if(chartWidth < 1) chartWidth = 1;
 					if(chartHeight < 1) chartHeight = 1;
 					
-					String chartTitle = "";
-					String xAxisTitle = "Sample Number";
+					String chartTitle = diagrammtitel;
+					String xAxisTitle = "Zeit";
 					String yAxisTitle = datasets[0].unit;
 					
 					BufferedImage image = getTimeDomainChart(chartTitle, xAxisTitle, yAxisTitle, chartWidth, chartHeight);
