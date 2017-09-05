@@ -340,19 +340,23 @@ public class DataStructureWindow extends JDialog {
 		String name = "";
 		Color color = null;
 		String unitms = "m/s²";
-		String unitg = "Vielfache von g"; //Unterscheidung nach auswahl
+		String unitg = "Vielfache von G"; //Unterscheidung nach auswahl
 		String unit0 = "";
 		String unitmbar = "mBar";
 		String unitdeg = "°C";
 		String unitm = "m";
 		String unita="";
+		double conversionFactorms = 832.417799;
+		double conversionFactorg = 8166.01860819;
 		double conversionFactorA = 1;
 		double conversionFactorB = 1;
 		
 		if(MenuBar.getbeschlEinheit()==2){
 			unita = unitms;
+			conversionFactorA = conversionFactorms;
 		} else {
 			unita = unitg;
+			conversionFactorA = conversionFactorg;
 		}
 		
 		location = 0;
@@ -378,7 +382,7 @@ public class DataStructureWindow extends JDialog {
 		location = 4;
 		name = "Druck";
 		color = Color.BLACK;
-		Controller.insertDataset(location, processor, name, color, unitmbar, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unitmbar, 1024/28, conversionFactorB);
 		
 		location = 5;
 		name = "Temperatur";
@@ -388,7 +392,7 @@ public class DataStructureWindow extends JDialog {
 		location = 6;
 		name = "Höhe";
 		color = Color.DARK_GRAY;
-		Controller.insertDataset(location, processor, name, color, unitm, conversionFactorA, conversionFactorB);
+		Controller.insertDataset(location, processor, name, color, unitm, 1/1000, conversionFactorB);
 		
 		/*
 		locationTextfield.setEnabled(false);
